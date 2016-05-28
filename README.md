@@ -5,7 +5,7 @@ HAP-NodeJS is a Node.js implementation of HomeKit Accessory Server.
 
 With this project, you should be able to create your own HomeKit Accessory on Raspberry Pi, Intel Edison or any other platform that can run Node.js :)
 
-The implementation may not 100% follow the HAP MFi Specification since MFi program doesn't allow individual developer to join. 
+The implementation may not 100% follow the HAP MFi Specification since MFi program doesn't allow individual developer to join.
 
 Remember to run `npm install` before actually running the server.
 
@@ -20,7 +20,7 @@ node BridgedCore.js
 Or if you wish to host each Accessory as an independent HomeKit device:
 
 ```sh
-node Code.js
+node Core.js
 ```
 
 The HAP-NodeJS library uses the [debug](https://github.com/visionmedia/debug) library for log output. You can print some or all logs by setting the `DEBUG` environment variable. For instance, to see all debug logs while running the server:
@@ -36,22 +36,6 @@ HAP-NodeJS provides a set of classes you can use to construct Accessories progra
 
 The key classes intended for use by API consumers are:
 
-<<<<<<< HEAD
-Set up on Raspberry Pi
-
-Install Raspbian
-(follow instructions on ...)
-
-Passwordless ssh - useful
-Avahi hostname - useful
-(http://elinux.org/RPi_Advanced_Setup)
-
-Install node 0.10.36?
-
-http://joshondesign.com/2013/10/23/noderpi
-
-npm install pm2
-=======
   * [Accessory](lib/Accessory.js): Represents a HomeKit device that can be published on your local network.
   * [Bridge](lib/Bridge.js): A kind of Accessory that can host other Accessories "behind" it while only publishing a single device.
   * [Service](lib/Service.js): Represents a set of grouped values necessary to provide a logical function. Most of the time, when you think of a supported HomeKit device like "Thermostat" or "Door Lock", you're actualy thinking of a Service. Accessories can expose multiple services.
@@ -69,4 +53,3 @@ Special thanks to [Alex Skalozub](https://twitter.com/pieceofsummer), who revers
 [There](http://instagram.com/p/t4cPlcDksQ/) is a video demo running this project on Intel Edison.
 
 If you are interested in HAP over BTLE, you might want to check [this](https://gist.github.com/KhaosT/6ff09ba71d306d4c1079).
->>>>>>> KhaosT/master
