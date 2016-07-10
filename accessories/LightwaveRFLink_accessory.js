@@ -35,7 +35,6 @@ lightwaveRFLink.addBridgedAccessory(new LightwaveLight("Kitchen downlights", 1, 
 lightwaveRFLink.addBridgedAccessory(new LightwaveLight("Dining room lights", 1, 4))
 lightwaveRFLink.addBridgedAccessory(new LightwaveLight("Conservatory lights", 1, 5))
 lightwaveRFLink.addBridgedAccessory(new LightwaveLight("Garage lights", 1, 6))
-lightwaveRFLink.addBridgedAccessory(new LightwaveLight("Carport lights", 1, 7))
 lightwaveRFLink.addBridgedAccessory(new LightwaveLight("Garden lights", 1, 8))
 lightwaveRFLink.addBridgedAccessory(new LightwaveLight("Front door lights", 2, 1))
 lightwaveRFLink.addBridgedAccessory(new LightwaveLight("Hallway lights", 2, 2))
