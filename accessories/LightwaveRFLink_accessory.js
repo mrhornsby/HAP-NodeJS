@@ -4,7 +4,9 @@ var Service = require('../').Service;
 var Characteristic = require('../').Characteristic;
 var uuid = require('../').uuid;
 var LightwaveLight = require('../lib/LightwaveLight.js').LightwaveLight;
-var getRevisionAndMac = require('../lib/util/lightwave.js').getRevisionAndMac;
+var LWRF = require('../lib/util/lightwave.js');
+
+LWRF.init()
 
 // Generate a consistent UUID for our light Accessory that will remain the same even when
 // restarting our server. We use the `uuid.generate` helper function to create a deterministic
@@ -22,14 +24,16 @@ lightwaveRFLink
   .getService(Service.AccessoryInformation)
   .setCharacteristic(Characteristic.Manufacturer, "Siemens")
 
-getRevisionAndMac(function(revision, mac) {
-  lightwaveRFLink
-    .getService(Service.AccessoryInformation)
-    .setCharacteristic(Characteristic.Model, revision)
-    .setCharacteristic(Characteristic.SerialNumber, mac)
-})
+lightwaveRFLink
+  .getService(Service.AccessoryInformation)
+  .setCharacteristic(Characteristic.Model).on('get', LWRF.getVersion)
 
-lightwaveRFLink.addBridgedAccessory(new LightwaveLight("Lounge lights", 1, 1))
+lightwaveRFLink
+  .getService(Service.AccessoryInformation)
+  .setCharacteristic(Characteristic.SerialNumber).on('get', LWRF.getSerial)
+
+
+lightwaveRFLink.addBridgedAccessory(new LightwaveLight("Lounge lights", 1, 1, false))
 lightwaveRFLink.addBridgedAccessory(new LightwaveLight("Kitchen lights", 1, 2))
 lightwaveRFLink.addBridgedAccessory(new LightwaveLight("Kitchen downlights", 1, 3))
 lightwaveRFLink.addBridgedAccessory(new LightwaveLight("Dining room lights", 1, 4))
