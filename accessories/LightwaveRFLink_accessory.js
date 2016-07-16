@@ -17,7 +17,7 @@ var lightwaveRFLinkUUID = uuid.generate('hap-nodejs:accessories:lightwaverflink'
 var lightwaveRFLink = exports.accessory = new Bridge('LightwaveRF Link', lightwaveRFLinkUUID);
 
 // Add properties for publishing (in case we're using Core.js and not BridgedCore.js)
-lightwaveRFLink.username = "1A:2B:3C:4D:5E:9F";
+lightwaveRFLink.username = "1A:2B:3C:4D:5E:1F";
 lightwaveRFLink.pincode = "031-45-154";
 
 lightwaveRFLink
@@ -38,16 +38,16 @@ lightwaveRFLink.addBridgedAccessory(new LightwaveLight("Kitchen lights", 1, 2))
 lightwaveRFLink.addBridgedAccessory(new LightwaveLight("Kitchen downlights", 1, 3))
 lightwaveRFLink.addBridgedAccessory(new LightwaveLight("Dining room lights", 1, 4))
 lightwaveRFLink.addBridgedAccessory(new LightwaveLight("Conservatory lights", 1, 5))
-lightwaveRFLink.addBridgedAccessory(new LightwaveLight("Garage lights", 1, 6, false))
-lightwaveRFLink.addBridgedAccessory(new LightwaveLight("Garden lights", 1, 8, false))
-lightwaveRFLink.addBridgedAccessory(new LightwaveLight("Front door lights", 2, 1, false))
-lightwaveRFLink.addBridgedAccessory(new LightwaveLight("Hallway lights", 2, 2, false))
-lightwaveRFLink.addBridgedAccessory(new LightwaveLight("Cloakroom lights", 2, 3, false))
-lightwaveRFLink.addBridgedAccessory(new LightwaveLight("Landing lights", 2, 4, false))
+lightwaveRFLink.addBridgedAccessory(new LightwaveLight("Garage lights", 1, 6))
+lightwaveRFLink.addBridgedAccessory(new LightwaveLight("Garden lights", 1, 8))
+lightwaveRFLink.addBridgedAccessory(new LightwaveLight("Front door lights", 2, 1))
+lightwaveRFLink.addBridgedAccessory(new LightwaveLight("Hallway lights", 2, 2))
+lightwaveRFLink.addBridgedAccessory(new LightwaveLight("Cloakroom lights", 2, 3))
+lightwaveRFLink.addBridgedAccessory(new LightwaveLight("Landing lights", 2, 4))
 lightwaveRFLink.addBridgedAccessory(new LightwaveLight("Bedroom lights", 2, 5))
-lightwaveRFLink.addBridgedAccessory(new LightwaveLight("Bathroom lights", 2, 6, false))
+lightwaveRFLink.addBridgedAccessory(new LightwaveLight("Bathroom lights", 2, 6))
 lightwaveRFLink.addBridgedAccessory(new LightwaveLight("Study lights", 2, 7))
-lightwaveRFLink.addBridgedAccessory(new LightwaveLight("Top landing lights", 2, 8, false))
-lightwaveRFLink.addBridgedAccessory(new LightwaveLight("Guest bathroom lights", 3, 1, false))
+lightwaveRFLink.addBridgedAccessory(new LightwaveLight("Top landing lights", 2, 8))
+lightwaveRFLink.addBridgedAccessory(new LightwaveLight("Guest bathroom lights", 3, 1))
 lightwaveRFLink.addBridgedAccessory(new LightwaveLight("Guest bedroom lights", 3, 2))
 lightwaveRFLink.addBridgedAccessory(new LightwaveLight("Laundry lights", 3, 3))
